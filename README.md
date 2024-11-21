@@ -7,4 +7,5 @@
 
 2.部分後端：front_end1104/app/src/main/java/com/example/a0731
 
-訓練模型：調整中
+訓練模型：YOLOv11m-seg
+資料夾：
