@@ -1,7 +1,9 @@
 # Resume
 履歷用
 
-以android studio開發之app 
+網頁端：tiaotiaokuangkuang
+
+app端：ttkk_full_ver
 
 1.前端資料夾：front_end1104/app/src/main/res/layout
 
@@ -9,7 +11,7 @@
 
 訓練模型：YOLOv11m-seg
 
-資料夾：window_detection
+影像辨識資料夾：window_detection
 
 ultralytics hub上有現成的基礎模型可以使用 專題製作採用此方式訓練 以下附上若用本機訓練的簡易流程
 
