@@ -1,7 +1,5 @@
 package com.example.a0731;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
@@ -13,15 +11,8 @@ import java.util.Arrays;
 import java.util.List;
 
 import android.os.AsyncTask;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

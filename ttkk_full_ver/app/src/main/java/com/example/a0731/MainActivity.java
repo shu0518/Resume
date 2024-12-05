@@ -10,12 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 
 import androidx.activity.EdgeToEdge;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.io.BufferedReader;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
@@ -28,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonLogin;
     private TextView textViewForgotPassword;
     private TextView textViewRegister, textViewResult;
+    private SessionManager sessionManager; //保存登入帳密
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +39,19 @@ public class MainActivity extends AppCompatActivity {
         textViewForgotPassword = findViewById(R.id.textViewForgotPassword);
         textViewRegister = findViewById(R.id.textViewRegister);
         textViewResult = findViewById(R.id.textViewResult);
+
+        sessionManager = new SessionManager(this);
+
+        // 檢查是否已經登入
+        if (sessionManager.isLoggedIn()) {
+            // 如果已登入，直接跳轉到首頁
+            String savedAccount = sessionManager.getUserAccount();
+            Intent intent = new Intent(MainActivity.this, HomepageActivity.class);
+            intent.putExtra("account", savedAccount);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         // 為按鈕設置點擊監聽器
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -114,16 +124,19 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             try {
-                // 根據伺服器回應顯示結果
                 if (result.startsWith("Login Successful")) {
                     // 從伺服器回應中獲取帳號
                     String[] parts = result.split(":");
                     String account = parts.length > 1 ? parts[1].trim() : "";
 
-                    // 跳轉到 FrontpageActivity，並將帳號傳遞過去
+                    // 使用 SessionManager 儲存登入狀態
+                    sessionManager.createLoginSession(account);
+
+                    // 跳轉到 HomepageActivity
                     Intent intent = new Intent(MainActivity.this, HomepageActivity.class);
                     intent.putExtra("account", account);
                     startActivity(intent);
+                    finish();
                 } else {
                     textViewResult.setText("帳號或密碼錯誤，請重新輸入");
                 }

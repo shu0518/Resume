@@ -1,6 +1,5 @@
 // ProcessingData 類別 (假設已有的數據模型)
 package com.example.a0731;
-import org.json.JSONObject;
 public class ProcessingData {
     private String spec;
     private String specification;

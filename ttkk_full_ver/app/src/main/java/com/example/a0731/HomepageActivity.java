@@ -11,8 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
+import com.example.a0731.SessionManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,13 +35,22 @@ public class HomepageActivity extends AppCompatActivity {
     private ImageButton clearButton;
     private ImageButton profileButton;
     private ImageButton logoutButton;
-    private ImageView cameraButton;  // 確保在這裡正確宣告 cameraButton
     private TextView  saveaccount;
+    private SessionManager sessionManager; //檢查登入狀態
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
+        sessionManager = new SessionManager(this);
+
+        // 檢查登入狀態
+        if (!sessionManager.isLoggedIn()) {
+            Intent intent = new Intent(HomepageActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         // 獲取從 MainActivity 傳過來的帳號資訊
         Intent intent = getIntent();
@@ -64,16 +72,6 @@ public class HomepageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(HomepageActivity.this, UserProfileActivity.class);
                 intent.putExtra("account", getIntent().getStringExtra("account"));
-                startActivity(intent);
-            }
-        });
-
-        // 查找並設置相機按鈕的點擊事件
-        cameraButton = findViewById(R.id.cameraButton);
-        cameraButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomepageActivity.this, TestCameraActivity.class);
                 startActivity(intent);
             }
         });
@@ -154,8 +152,11 @@ public class HomepageActivity extends AppCompatActivity {
     }
     // 登出方法
     private void logout() {
+        // 使用 SessionManager 清除登入狀態
+        sessionManager.logout();
+
         // 清除用戶數據或執行其他登出邏輯
-        Intent intent = new Intent(HomepageActivity.this, MainActivity.class);  // 回到登入頁
+        Intent intent = new Intent(HomepageActivity.this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();  // 結束當前活動

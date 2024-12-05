@@ -1,7 +1,5 @@
 package com.example.a0731;
 
-import org.json.JSONObject;
-
 public class MeasuredData {
     private String spec;
     private String specification;

@@ -18,6 +18,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {
+            // 只保留必要的架構
+            abiFilters 'arm64-v8a'
+        }
     }
 
     buildTypes {
@@ -31,6 +35,34 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    bundle {
+        language {
+            enableSplit = true
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+    aaptOptions {
+        noCompress "pt"
+    }
+    packagingOptions {
+        pickFirst '**/libfbjni.so'
+        pickFirst '**/libc++_shared.so'
+        pickFirst '**/libpytorch_jni.so'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/*.kotlin_module'
+    }
+
 }
 
 dependencies {
@@ -44,5 +76,6 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
-    implementation 'org.tensorflow:tensorflow-lite:2.10.0' // 請使用適當版本
+    implementation 'org.pytorch:pytorch_android:1.13.1'  //辨識模型
+    implementation 'org.pytorch:pytorch_android_torchvision:1.13.1'
 }

@@ -63,13 +63,11 @@
                 style="@style/CustomEditTextStyle"
                 android:hint="格局"
                 android:inputType="text"/>
-
             <EditText
                 android:id="@+id/measured_length"
                 style="@style/CustomEditTextStyle"
                 android:hint="測量長度"
                 android:inputType="text"/>
-
             <EditText
                 android:id="@+id/measured_width"
                 style="@style/CustomEditTextStyle"

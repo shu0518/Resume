@@ -9,54 +9,61 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
-public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ViewHolder> {
+public class ModelAdapter extends RecyclerView.Adapter<ModelAdapter.ModelViewHolder> {
 
-    private List<Bitmap> modelImages;  // 用於儲存模型圖片的列表
-    private OnModelClickListener listener;  // 點擊事件的回調介面
+    // 保存所有模型圖片的 Bitmap 列表
+    private List<Bitmap> modelImages;
+    private OnImageClickListener imageClickListener; // 點擊事件的處理器
 
-    // 修改構造函數，接受 List<Bitmap> 和 OnModelClickListener
-    public ModelAdapter(List<Bitmap> modelImages, OnModelClickListener listener) {
+    // 定義一個接口，用於處理圖片點擊事件
+    public interface OnImageClickListener {
+        void onImageClick(Bitmap bitmap);
+    }
+
+    // 更新構造函數，接受圖片列表和點擊事件的處理器
+    public ModelAdapter(List<Bitmap> modelImages, OnImageClickListener imageClickListener) {
         this.modelImages = modelImages;
-        this.listener = listener;
+        this.imageClickListener = imageClickListener;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_model, parent, false);
-        return new ViewHolder(view);
+    public ModelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // 從 item_model_image.xml 加載每個項目的視圖
+        View view = LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.item_model, // 項目佈局資源
+                parent, // 父佈局
+                false // 不立即附加到父佈局
+        );
+        return new ModelViewHolder(view); // 返回新的 ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Bitmap modelImage = modelImages.get(position);
-        holder.modelImageView.setImageBitmap(modelImage);
+    public void onBindViewHolder(@NonNull ModelViewHolder holder, int position) {
+        Bitmap image = modelImages.get(position);
+        holder.modelImageView.setImageBitmap(image);
 
-        // 設置點擊事件，將選中的圖片回調給調用者
+        // 設置圖片點擊事件
         holder.itemView.setOnClickListener(v -> {
-            if (listener != null) {
-                listener.onModelClick(modelImage);
+            if (imageClickListener != null) {
+                imageClickListener.onImageClick(image); // 傳遞點擊的圖片
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return modelImages.size();
+        return modelImages.size(); // 返回圖片列表的大小
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-        ImageView modelImageView;
+    // ModelViewHolder 內部類，用於持有每個項目的視圖
+    static class ModelViewHolder extends RecyclerView.ViewHolder {
+        ImageView modelImageView; // 顯示模型圖片的 ImageView
 
-        public ViewHolder(@NonNull View itemView) {
+        public ModelViewHolder(@NonNull View itemView) {
             super(itemView);
+            // 從項目視圖中找到 modelImageView
             modelImageView = itemView.findViewById(R.id.modelImageView);
         }
-    }
-
-    // 定義回調介面，用於點擊事件的回調
-    public interface OnModelClickListener {
-        void onModelClick(Bitmap modelImage);
     }
 }

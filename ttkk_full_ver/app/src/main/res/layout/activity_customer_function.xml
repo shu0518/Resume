@@ -180,44 +180,46 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="#B39BAAB1"
-            android:gravity="center"
             android:padding="8dp"
             android:layout_gravity="bottom">
 
-        <!-- Camera Button -->
-        <ImageButton
-            android:id="@+id/cameraButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Camera"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_camera"
-            android:tint="#FFFFFF" />
+            <!-- 左側空白權重 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
-        <!-- Home Button -->
-        <ImageButton
-            android:id="@+id/homeButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/ic_home"
-            android:scaleType="fitCenter"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Home"
-            android:tint="#FFFFFF"
-            android:layout_marginStart="48dp" />
+            <!-- Home Button (置中) -->
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_home"
+                android:scaleType="fitCenter"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Home"
+                android:tint="#FFFFFF" />
 
-        <!-- Gallery Button -->
-        <ImageButton
-            android:id="@+id/galleryButton"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/ic_gallery"
-            android:scaleType="fitCenter"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Gallery"
-            android:tint="#FFFFFF"
-            android:layout_marginStart="48dp" />
-    </LinearLayout>
+            <!-- 右側空白權重 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.6" />
+
+            <!-- Camera Button (右側) -->
+            <ImageButton
+                android:id="@+id/cameraButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Camera"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_camera"
+                android:tint="#FFFFFF" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.11" />
+        </LinearLayout>
 </FrameLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

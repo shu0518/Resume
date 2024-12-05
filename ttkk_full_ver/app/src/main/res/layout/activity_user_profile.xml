@@ -102,7 +102,7 @@
         android:layout_height="50dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="#a78989"
-        android:text="编辑"
+        android:text="編輯"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
