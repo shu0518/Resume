@@ -1,0 +1,59 @@
+﻿@model s1411031038_NETFinal.Models.Guestbooks
+
+@{
+    ViewBag.Title = " 回覆";
+    Layout = "~/Views/Shared/_Layout Final.cshtml";
+}
+<div class="container">
+    @*建立回覆留言所須的表單*@
+    @using (Html.BeginForm())
+    {
+        <h3> 回覆</h3>
+        @*建立回覆內容表格*@
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.name)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.name)
+                    @Html.ValidationMessageFor(model => model.name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.content)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.content)
+                    @Html.ValidationMessageFor(model => model.content)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.reply)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.reply)
+                    @Html.ValidationMessageFor(model => model.reply)
+                </td>
+            </tr>
+        </table>
+        @*一則留言僅可回覆一次，若被回覆，則顯示返回列表連結*@
+        if (Model.replyTime == null)
+        {
+            <input type="submit" value=" 回覆" />
+        }
+        else
+        {
+            <text> 此留言已回覆，請</text>
+            @Html.ActionLink(" 返回列表", "評論區")
+        }
+    }
+
+
+    <div>
+        @Html.ActionLink("Back to List", "評論區")
+    </div>
+</div>
+

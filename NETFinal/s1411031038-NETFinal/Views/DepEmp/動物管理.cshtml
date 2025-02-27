@@ -1,0 +1,76 @@
+﻿@model s1411031038_NETFinal.ViewModels.DepEmpViewModel
+
+@{
+    ViewBag.Title = "動物管理";
+    Layout = "~/Views/Shared/_Layout Final.cshtml";
+}
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3">
+            <h3>分類</h3><hr />
+                       <h3>
+                           @if (!Model.depList.Count.Equals(0))
+                           {
+                               foreach (var item in Model.depList)
+                               {
+                                   <p>@Html.ActionLink(item.DepName, "動物管理", new { depid = item.DepId })</p>
+                               }
+                           }
+                           else
+                           {
+                               <p>查無資料</p>
+                           }
+                       </h3>
+            
+        </div>
+
+        <div class="col-md-9">
+            <table class="table">
+                <tr>
+                    <td colspan="3"><h3>@Model.SrhName</h3></td>
+                    <td colspan="3">
+                        <a href="@Url.Action("Create", new {dId=@Model.SrhId })"
+                           class="btn btn-info">新增</a>
+                    </td>
+                </tr>
+                @if (!Model.empList.Count.Equals(0))
+                {
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.empList[0].EmpId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.empList[0].EmpName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.empList[0].EmpImg)
+                        </th>
+                        <th></th>
+                    </tr>
+                    foreach (var item in Model.empList)
+                    {
+                        <tr>
+                            <td>@item.EmpId</td>
+                            <td>@item.EmpName</td>
+                            <td>@item.EmpImg</td>
+                            <td>
+                                @Html.ActionLink(" 修改", "Edit", new { eId = item.EmpId })
+                                @Html.ActionLink(" 刪除", "Delete", new { eId = item.EmpId, dId = item.DepId })
+                            </td>
+                        </tr>
+                    }
+                }
+                @* 如果資料庫中為零筆記錄，則印出" 資料庫內查無資料"*@
+                else
+                {
+                    <tr>
+                        <td colspan="4">
+                            資料庫內查無資料
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

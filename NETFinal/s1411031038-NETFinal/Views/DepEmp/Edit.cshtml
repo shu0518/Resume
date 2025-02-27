@@ -1,0 +1,55 @@
+﻿@model s1411031038_NETFinal.Models.Employee
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout Final.cshtml";
+}
+<div class="container">
+    @* 建立修改欄位所須的表單*@
+    @using (Html.BeginForm("Edit", "DepEmp", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Hidden("eId", Request.QueryString["eId"])
+        @Html.Hidden("DepId", Request.QueryString["DepId"])
+        <h3> 修改動物資料</h3>
+        @* 建立修改動物資料表格*@
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmpId)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.EmpId)
+                    @Html.ValidationMessageFor(model => model.EmpId)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmpName)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.EmpName)
+                    @Html.ValidationMessageFor(model => model.EmpName)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.EmpImg)
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Image" class="control-label"></label>
+                        <input type="file" name="upload" id="file" accept="images/*" class="form-control-file">
+                        <span asp-validation-for="Image" class="text-danger"></span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value=" 修改" />
+    }
+
+
+    <div>
+        @Html.ActionLink("返回列表", "動物管理")
+    </div>
+</div>
+
