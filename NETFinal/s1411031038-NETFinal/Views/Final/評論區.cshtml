@@ -1,0 +1,90 @@
+﻿@model s1411031038_NETFinal.ViewModels.GuestbooksViewModel
+
+@{
+    ViewBag.Title = "評論區";
+    Layout = "~/Views/Shared/_Layout Final.cshtml";
+}
+@* 載入新增留言頁面*@
+
+
+<div class="container">
+
+
+    <h2>評論區</h2>
+    <div id="CreateData">
+        @Html.Action("Create")
+    </div>
+
+    <table>
+        @* 如果資料庫中不是零筆記錄，則顯示資料，並列出新增、刪除與修改連結*@
+        @if (!Model.DataList.Count.Equals(0))
+        {
+            foreach (var item in Model.DataList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.DataList[0].name)
+                    </td>
+                    <td>
+                        @item.name
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.DataList[0].createTime)
+                    </td>
+                    <td>
+                        @item.createTime
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.DataList[0].content)
+                    </td>
+                    <td colspan="3">
+                        @item.content
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.DataList[0].reply)
+                    </td>
+                    <td colspan="3">
+                        @item.reply
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.DataList[0].replyTime)
+                    </td>
+                    <td>
+                        @item.replyTime
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        @Html.ActionLink(" 修改", "Edit", new { id = item.id })
+                        @Html.ActionLink(" 回覆", "Reply", new { id = item.id })
+                        @Html.ActionLink(" 刪除", "Delete", new { id = item.id })
+                    </td>
+                </tr>
+            }
+        }
+        @* 如果資料庫中為零筆記錄，則印出" 資料庫內查無資料"*@
+        else
+        {
+            <tr>
+                <td colspan="4">
+                    資料庫內查無資料
+                </td>
+            </tr>
+        }
+    </table>
+
+
+</div>
+
+
+
+
+
