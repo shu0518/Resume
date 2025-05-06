@@ -1,9 +1,9 @@
 # Resume
 履歷用
 
-網頁端：tiaotiaokuangkuang
+Web 端：tiaotiaokuangkuang
 
-app端：ttkk_full_ver
+app 端：ttkk_full_ver
 
 1.前端資料夾：front_end1104/app/src/main/res/layout
 
