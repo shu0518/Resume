@@ -1,17 +1,19 @@
 # Resume
 履歷用
 
-Web 端：tiaotiaokuangkuang
+ASP .NET MVC 作品集：NETFinal
 
-app 端：ttkk_full_ver
+專題 Web 端：tiaotiaokuangkuang
+
+專題 app 端：ttkk_full_ver
+
+專題 物件分割模型包：window_detection
 
 1.前端資料夾：front_end1104/app/src/main/res/layout
 
 2.部分後端：front_end1104/app/src/main/java/com/example/a0731
 
 訓練模型：YOLOv11m-seg
-
-影像辨識資料夾：window_detection
 
 ultralytics hub上有現成的基礎模型可以使用 專題製作採用此方式訓練 以下附上若用本機訓練的簡易流程
 
