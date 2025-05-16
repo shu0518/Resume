@@ -1,7 +1,7 @@
 # Resume
 履歷用
 
-數據分析：
+數據分析：python 數據分析作品集
 
 ASP .NET MVC 作品集：NETFinal
 
