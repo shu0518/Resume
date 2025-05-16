@@ -1,6 +1,8 @@
 # Resume
 履歷用
 
+數據分析：
+
 ASP .NET MVC 作品集：NETFinal
 
 專題 Demo 圖片：Project_Photo
