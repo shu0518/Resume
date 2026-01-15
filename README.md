@@ -27,16 +27,7 @@
 
 ---
 
-## 3. 📄 Resume & Other Projects (履歷與其他作品)
-
-本區塊展示個人履歷、網頁開發作品以及畢業專題的完整架構（包含 Web、App 與 AI 模型訓練）。
-
-### 💼 個人作品集
-* **📝 Resume**：履歷用文件。
-* **📊 數據分析**：`python 數據分析作品集` (Python Data Analysis Portfolio)。
-* **🌐 ASP .NET MVC**：`NETFinal` (ASP .NET MVC 作品集)。
-
-### 🎓 畢業專題實作
+### 3. 🎓 大學畢業專題
 整合 Web、App 與 AI 物件分割技術的專題展示。
 
 #### **專案架構**
@@ -64,3 +55,12 @@
 3.  **模型加載與開始訓練**
     * 選擇 YOLO 模型。
     * 調整參數並開始訓練。
+
+---
+## 4. 📄 Other Projects 
+
+數據分析以及網頁開發的完整實作（包含 Web、App 與 影像辨識模型訓練）。
+
+* **📊 數據分析**：`python 數據分析作品集` (Python Data Analysis Portfolio)。
+* **🌐 ASP .NET MVC**：`NETFinal` (ASP .NET MVC 作品集)。
+
