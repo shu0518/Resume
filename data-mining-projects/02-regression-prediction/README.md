@@ -50,7 +50,7 @@
 
 > 註：詳細數值請參考各 Notebook 的輸出結果。
 
-## 🛠️ 技術細節 (Technical Details)
+## 🛠️ 技術細節
 
 - **資料前處理 (Preprocessing)**:
   - 缺失值檢查。
@@ -59,10 +59,3 @@
   - **RMSE**: 衡量預測值與真實值的平均誤差程度。
   - **MAPE**: 衡量誤差的百分比，較易於商業解釋。
   - **R²**: 解釋模型對變異數的解釋能力。
-
-## 🔧 環境需求 (Requirements)
-
-執行本專案需要以下 Python 套件：
-
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn xgboost
