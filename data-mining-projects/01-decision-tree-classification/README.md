@@ -1,4 +1,4 @@
-# Data Mining Assignment 1: Decision Tree Classification
+# Data Mining Project 1: Decision Tree Classification
 
 本專案的主要目標是實作並比較四種不同的決策樹演算法（ID3, C4.5, CART, C5.0），並進行收入預測（分類任務）。
 
