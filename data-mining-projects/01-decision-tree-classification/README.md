@@ -39,7 +39,7 @@
 
 ## 🚀 執行結果 (Results)
 
-我們比較了不同演算法在測試集上的表現，其中 **C5.0 (with Boosting)** 表現最佳：
+比較不同演算法在測試集上的表現，其中 **C5.0 (with Boosting)** 表現最佳：
 
 | Algorithm | Metric | Performance |
 |-----------|--------|-------------|
@@ -48,11 +48,3 @@
 | **C4.5** | Accuracy | (See Notebook) |
 | **ID3** | Accuracy | (See Notebook) |
 
-> 註：詳細的混淆矩陣 (Confusion Matrix) 與 F1-Score 分析請參考各 Notebook 的輸出結果。
-
-## 🛠️ 環境需求 (Requirements)
-
-執行本專案需要以下 Python 套件：
-
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn graphviz openpyxl
