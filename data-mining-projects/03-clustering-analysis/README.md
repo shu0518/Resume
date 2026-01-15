@@ -1,4 +1,4 @@
-# Data Mining Assignment 3: Clustering Analysis
+# Data Mining Project 3: Clustering Analysis
 
 本專案的目標是實作並比較三種不同類型的非監督式學習分群演算法，並探討它們在不同資料分佈下的表現。
 
