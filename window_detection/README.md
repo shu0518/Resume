@@ -36,18 +36,3 @@ To utilize the Window Detection and Segmentation System:
 ## Examples
 - **Input Image**: (Attach example image)
 - **Output Segmentation Mask**: (Attach example output)
-
-## Contributing
-Contributions are welcome! Please submit a pull request or open an issue to discuss improvements.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-- Thanks to the contributors and communities that make this project possible.  
-- References to original research papers or related work done in this domain.
-
-## Contact
-For queries and feedback, please contact:  
-**Email**: [your-email@example.com](mailto:your-email@example.com)  
-**GitHub**: [shu0518](https://github.com/shu0518)  
