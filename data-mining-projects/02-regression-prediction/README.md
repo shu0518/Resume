@@ -25,7 +25,7 @@
   - 使用 **XGBoost**（Gradient Boosting）。
   - 比較其與傳統機器學習模型的效能差異。
 
-### 進階實驗 (🌟 Highlight)
+### 進階實驗
 - **`XGBoost_kfold.ipynb`**:
   - 使用 **K-Fold Cross-Validation** 進行模型驗證。
   - 透過多折驗證確保模型沒有 Overfitting，並取得更客觀的平均誤差值。
