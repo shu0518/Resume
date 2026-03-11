@@ -4,7 +4,7 @@
 
 *A comprehensive collection of data mining and machine learning models for classification, regression, clustering, and association rule mining.*
 
-![Version](https://img.shields.io/badge/version-v1.0.0-green.svg)
+![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![Last Updated](https://img.shields.io/badge/Last_Updated-2026.03.11-brightgreen)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 
