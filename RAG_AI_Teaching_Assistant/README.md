@@ -4,7 +4,7 @@
 
 **一個基於 RAG 技術與大型語言模型的 AI 課程助教，精準檢索知識並完美重現教授授課風格。**
 
-![Version](https://img.shields.io/badge/version-v1.0.0-green.svg)
+![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)
 ![Last Updated](https://img.shields.io/badge/Last_Updated-2026.03.11-brightgreen)
 [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Framework: LangChain](https://img.shields.io/badge/Framework-LangChain-green)](https://python.langchain.com/)
