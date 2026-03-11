@@ -1,0 +1,53 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name=" viewport" content="width=device-width" />
+    <title>Index</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("首頁", "首頁", "Final", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            @Html.ActionLink("園區動物介紹", "園區動物介紹", "DepEmp", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("評論區", "評論區", "Final", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("動物管理", "動物管理", "DepEmp", new { area = "" }, new { @class = "navbar-brand" })
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+    </div>
+
+
+    
+    @RenderBody();
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>學號:1411031038 / 姓名:李映澍 / 班級:資管二1</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>

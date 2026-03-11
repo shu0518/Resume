@@ -1,0 +1,50 @@
+﻿@model s1411031038_NETFinal.Models.Guestbooks
+@{
+    ViewBag.Title = " 修改";
+    Layout = "~/Views/Shared/_Layout Final.cshtml";
+}
+<div class="container">
+    @* 建立修改欄位所須的表單*@
+    @using (Html.BeginForm())
+    {
+        <h3> 修改</h3>
+        @* 建立修改留言表格*@
+        <table>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.name)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.name)
+                    @Html.ValidationMessageFor(model => model.name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.content)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.content)
+                    @Html.ValidationMessageFor(model => model.content)
+                </td>
+            </tr>
+        </table>
+        @* 判斷是否有人回覆，如果無人回覆，即可修改，否則不可修改*@
+        if (Model.replyTime == null)
+        {
+            <input type="submit" value=" 修改" />
+        }
+        else
+        {
+            <text> 此留言已回覆無法修改，請</text>
+            @Html.ActionLink(" 返回列表", "評論區")
+        }
+    }
+<div>
+    @Html.ActionLink("Back to List", "評論區")
+</div>
+</div>
+
+    
+
+

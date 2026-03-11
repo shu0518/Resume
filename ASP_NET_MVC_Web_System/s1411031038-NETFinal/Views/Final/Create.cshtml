@@ -1,0 +1,33 @@
+﻿@model s1411031038_NETFinal.Models.Guestbooks
+
+@* 建立新增資料所須的表單*@
+@using (Html.BeginForm("Create", "Final"))
+{
+    <h3> 新增評論</h3>
+    <table>
+        @* 新增姓名欄位區塊*@
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.name)
+            </td>
+            <td>    
+                @Html.TextBoxFor(model => model.name)
+                @Html.ValidationMessageFor(model => model.name)
+            </td>
+        </tr>
+        @* 新增內容欄位區塊*@
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.content)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.content)
+                @Html.ValidationMessageFor(model => model.content)
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value=" 新增評論" />
+}
+
+
+
