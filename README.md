@@ -34,7 +34,7 @@
   * **📱 App 用戶端**：[android_client_app](./Cross_Platform_EIMS/android_client_app) - 提供使用者操作介面與行動端體驗。
   * **🧠 AI 辨識模組**：[vision_model](./Cross_Platform_EIMS/vision_model) - 系統整合 YOLOv11m-seg 模型，實現精準的窗戶物件分割。
 * [👉 觀看系統 Demo 圖片](./Cross_Platform_EIMS/demo_assets) | [👉 查看完整專案目錄](./Cross_Platform_EIMS) 
-* 
+
 ### 3. ⛏️ 資料探勘 (Data Mining Projects)
 > **關鍵字：** `Machine Learning` `XGBoost` `DBSCAN` `Apriori`
 * **簡介**：深入四大資料探勘核心領域的實作與演算法效能比較。
