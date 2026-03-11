@@ -2,6 +2,7 @@
 
 > 一個基於 Python 與 Pandas 的台灣癌症數據分析與視覺化專案，提供性別、年齡及癌別的深度資料探索與趨勢追蹤。
 
+![Last Updated](https://img.shields.io/badge/Last_Updated-2026.03.11-brightgreen)
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
 [![Pandas](https://img.shields.io/badge/pandas-data%20analysis-150458.svg?logo=pandas)](https://pandas.pydata.org/)
 [![Matplotlib](https://img.shields.io/badge/matplotlib-visualization-ffffff.svg?logo=python)](https://matplotlib.org/)
