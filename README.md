@@ -1,66 +1,53 @@
-# 📂  Projects Portfolio
+# 👨‍💻 [你的名字/暱稱] 的個人作品集 (Portfolio)
 
-## 1. 🤖 Gen_AI_Final_Project
-**基於 RAG 的生成式 AI 課程智慧助教**
-本專案實作一個能模仿教授語氣、依據課程教材回答問題的 AI 助教系統。
+👋 歡迎來到我的 GitHub！我專注於 **人工智慧應用、資料科學、以及系統整合開發**。
+這裡收錄了我過去參與的核心專案與實作，展示我將理論轉化為實際應用的能力。
 
-* **核心技術**：結合 **RAG** ，使用 **Llama 3.3** LLM 與 **Google EmbeddingGemma** 處理向量檢索。
-* **關鍵功能**：
-    * **知識庫建立**：`Build_vector_database.ipynb` 負責將 PDF/TXT 教材轉換為向量資料庫。
-    * **互動介面**：`GenAI_Final_Project.ipynb` 使用 **Gradio** 打造 Chatbot 介面，並內建教授人格設定。
-* **資料來源**：`dataset/` 資料夾內含完整的課程逐字稿（如第 01 講至第 15 講）作為知識來源。
+## 🛠️ 核心技術棧 (Tech Stack)
+* **AI & Data Science**: Python, LangChain, RAG, YOLO, Scikit-learn, Pandas
+* **Web & App Development**: ASP.NET MVC, Vue.js, Android (Java), Gradio
+* **Tools & Others**: Git, Jupyter Notebook, SQL
 
 ---
 
-## 2. ⛏️ data-mining-projects
-**資料探勘實作合集**
-本資料夾收錄資料探勘四大核心領域的實作專案，重點在於演算法的比較與應用。
+## 🌟 精選專案 (Featured Projects)
 
-* **🌲 決策樹分類 (`01-decision-tree`)**
-    * 針對 Adult Dataset 進行收入預測，實作並比較 **ID3**, **C4.5**, **CART** 與 **C5.0 (with Boosting)** 演算法。
-* **📈 迴歸預測 (`02-regression`)**
-    * 使用 Boston Housing Dataset 預測房價，比較 **XGBoost**, **Random Forest**, **SVR** 與 **KNN** 的效能，並採用 K-Fold 交叉驗證。
-* **🍌 分群分析 (`03-clustering`)**
-    * 探討非凸集資料分群，驗證 **DBSCAN** 在處理複雜形狀（如香蕉形狀數據）時優於 **K-Means** 與階層式分群的表現。
-* **🛒 關聯規則 (`04-association-rule`)**
-    * 進行購物籃分析，實作 **Apriori** 與 **FP-Growth** 演算法來挖掘商品關聯，並建立互動式推薦系統。
+### 1. 🤖 基於 RAG 的生成式 AI 課程智慧助教 (Gen_AI_Final_Project)
+> **關鍵字：** `LLM` `RAG` `LangChain` `FAISS` `Gradio`
+* **簡介**：實作一個能模仿教授語氣、並基於課程 PDF/TXT 教材回答問題的 AI 助教系統，有效降低 AI 幻覺。
+* **技術亮點**：使用 **Llama 3.3 (Groq)** 進行推論，並透過 **Google EmbeddingGemma** 建立專屬知識庫 (Vector DB)。
+* [👉 查看專案詳情](./Gen_AI_Final_Project)
+
+### 2. 🎓 AI 智慧窗戶檢測系統 (大學畢業專題)
+> **關鍵字：** `YOLOv11` `物件偵測 (Computer Vision)` `Android App` `Web`
+* **簡介**：整合 Web、App 與邊緣 AI 物件分割技術的完整專題展示。
+* **技術亮點**：
+  * **AI 模型**：使用 `YOLOv11m-seg` 進行物件分割訓練，並將模型部署。
+  * **系統整合**：完成前端 App 介面 (`ttkk_full_ver`) 與 Web 端 (`tiaotiaokuangkuang`) 的串接與佈局。
+* [👉 觀看 Demo 圖片](./Project_Photo) | [模型程式碼](./window_detection)
+
+### 3. ⛏️ 資料探勘與機器學習實戰 (Data Mining Projects)
+> **關鍵字：** `Machine Learning` `XGBoost` `DBSCAN` `Apriori`
+* **簡介**：深入四大資料探勘核心領域的實作與演算法效能比較。
+* **技術亮點**：
+  * **分類與迴歸**：比較決策樹 (CART/C5.0) 與預測模型 (XGBoost/SVR) 於實際資料集 (Adult/Boston Housing) 的表現。
+  * **分群與關聯**：以 DBSCAN 處理非凸集資料，並實作 FP-Growth 建立購物籃推薦系統。
+* [👉 查看專案詳情](./data-mining-projects)
+
+---
+
+## 📂 其他實作專案 (Other Projects)
+
+除了上述重點專案，我也在不同領域有實務開發經驗：
+
+* **📊 Python 數據分析作品集**：[點此查看](./python%20數據分析作品集)
+  * 涵蓋多種實際場景的數據清洗、探索性資料分析 (EDA) 與視覺化。
+* **🌐 ASP.NET MVC 作品集 (NETFinal)**：[點此查看](./NETFinal)
+  * 基於 C# 實作之後端網站架構與資料庫互動應用。
 
 ---
 
-### 3. 🎓 大學畢業專題
-整合 Web、App 與 AI 物件分割技術的專題展示。
-
-#### **專案架構**
-* **Demo 圖片**：`Project_Photo`
-* **Web 端**：`tiaotiaokuangkuang`
-* **App 端**：`ttkk_full_ver`
-
-#### **🧠 AI 模型：物件分割 (Window Detection)**
-* **模型包名稱**：`window_detection`
-* **使用模型**：**YOLOv11m-seg**
-* **關鍵程式碼路徑**：
-    * 前端佈局：`front_end1104/app/src/main/res/layout`
-    * 後端邏輯：`front_end1104/app/src/main/java/com/example/a0731`
-
-#### **🏋️‍♂️ 模型訓練流程**
-專題製作主要採用 **Ultralytics Hub** 上現成的基礎模型進行訓練。若需進行本機訓練，簡易流程如下：
-
-1.  **環境準備**
-    * 安裝 Python 3.8 或更新版本。
-    * 配置 CUDA Toolkit 和 cuDNN。
-    * 安裝與 GPU 驅動相容的 PyTorch。
-2.  **數據集準備**
-    * 使用 **labelme** 標註影像（越詳細標出物件輪廓，訓練效果越好）。
-    * 將數據按照訓練、驗證和測試集分配（建議比例：80% / 10% / 10%）。
-3.  **模型加載與開始訓練**
-    * 選擇 YOLO 模型。
-    * 調整參數並開始訓練。
-
----
-## 4. 📄 Other Projects 
-
-數據分析以及網頁開發的完整實作（包含 Web、App 與 影像辨識模型訓練）。
-
-* **📊 數據分析**：`python 數據分析作品集` (Python Data Analysis Portfolio)。
-* **🌐 ASP .NET MVC**：`NETFinal` (ASP .NET MVC 作品集)。
-
+## 📫 聯絡我 (Contact)
+* 📧 Email: [你的 Email]
+* 💼 LinkedIn: [你的 LinkedIn 連結]
+* 📄 [下載我的完整履歷(PDF)](#) *(如果有的話可以附上 Google Drive 連結)*
